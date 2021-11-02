@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+:root {
+  --main-background: hsl(233, 47%, 7%);
+  --card-background: hsl(244, 38%, 16%);
+  --accent: hsl(277, 64%, 61%);
+  --main-heading-stats: hsl(0, 0%, 100%);
+  --main-paragraph: hsla(0, 0%, 100%, 0.75);
+  --stat-headings: hsla(0, 0%, 100%, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 15px;
+  color: var(--main-heading-stats);
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.8;
+}
+
+.wrapper {
+  position: relative;
+  min-height: 1000px;
+  background-color: var(--main-background);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  width: 80%;
+  max-width: 350px;
+  min-height: 820px;
+  margin: 6em auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--card-background);
+}
+
+.card__bg-image {
+  background-color: var(--accent);
+} 
+
+.card__bg-image > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+}
+
+.card__content {
+  padding: 2.8em 2.4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1em;
+}
+
+.violet {
+  color: var(--accent);
+}
+
+.light-gray {
+  color: var(--main-paragraph);
+}
+
+.card__stats-box {
+  margin: 1.8em;
+  display: flex;
+  flex-direction: column;
+  gap: 2.1em;
+}
+
+.card__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.card__stats-name {
+  text-transform: uppercase;
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+.attribution {
+  margin-bottom: 1em;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    font-size: 1.5vw;
+  }
+
+  .wrapper {
+    height: 665px;
+  }
+
+  .card {
+    display: grid;
+    width: 90%;
+    max-width: 920px;
+    grid-template-columns: 1fr 1fr;
+    height: 40vw;
+    min-height: initial;
+    max-height: 400px;
+  }
+
+  .card__content {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    text-align: left;
+    padding: 3.5em;
+    gap: 1.5em;
+  }
+
+  .card__bg-image {
+    grid-column: 2 / 3;
+    height: 100%;
+    grid-row: 1 / 2;
+  }
+
+  .card__bg-image > img {
+    object-fit: cover;
+  }
+
+  .card__stats-box {
+    flex-direction: row;
+    margin: auto 0 0 0;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+.attribution a {
+  text-decoration: none;
+}
